@@ -75,69 +75,88 @@ This also applies for the Node port. With that, both Hub and Node will be able t
 
 If the Hub is using the default ports, the --hub flag can be used to register the Node
 
-java -jar selenium-server-<version>.jar node --hub http://<hub-ip>:4443
+java -jar selenium-server-<version>.jar node 
+--hub http://<hub-ip>:4443
 
 When the Hub is not using the default ports, the --publish-events and --subscribe-events flags are needed.
 For example, if the Hub uses ports 8886, 8887, and 8888
 
-java -jar selenium-server-<version>.jar hub --publish-events tcp://<hub-ip>:8886 --subscribe-events tcp://<hub-ip>:8887 --port 8888
+java -jar selenium-server-<version>.jar hub 
+--publish-events tcp://<hub-ip>:8886 
+--subscribe-events tcp://<hub-ip>:8887 
+--port 8888
 
 The Node needs to use those ports to register successfully
-java -jar selenium-server-<version>.jar node --publish-events tcp://<hub-ip>:8886 --subscribe-events tcp://<hub-ip>:8887
+java -jar selenium-server-<version>.jar node 
+--publish-events tcp://<hub-ip>:8886 
+--subscribe-events tcp://<hub-ip>:8887
 
 *******************************************Distributed************************************************************
 3) DISTRIBUTED
 When using a Distributed Grid, each component is started separately, and ideally on different machines.
 
 #################################
-Event Bus: enables internal communication between different Grid components.
+3.1) Event Bus: enables internal communication between different Grid components.
 Default ports are: 4442, 4443, and 5557.
 
-java -jar selenium-server-<version>.jar event-bus --publish-events tcp://<event-bus-ip>:4442 --subscribe-events tcp://<event-bus-ip>:4443 --port 5557
+java -jar selenium-server-<version>.jar event-bus 
+--publish-events tcp://<event-bus-ip>:4442 
+--subscribe-events tcp://<event-bus-ip>:4443 
+--port 5557
 
 #################################
-New Session Queue: adds new session requests to a queue, which will be queried by the Distributor
+3.2) New Session Queue: adds new session requests to a queue, which will be queried by the Distributor
 Default port is 5559.
 
 java -jar selenium-server-<version>.jar sessionqueue --port 5559
 
 #################################
-Session Map: maps session IDs to the Node where the session is running
+3.3) Session Map: maps session IDs to the Node where the session is running
 Default Session Map port is 5556. Session Map interacts with the Event Bus.
 
-java -jar selenium-server-<version>.jar sessions --publish-events tcp://<event-bus-ip>:4442 --subscribe-events tcp://<event-bus-ip>:4443 --port 5556
+java -jar selenium-server-<version>.jar sessions 
+--publish-events tcp://<event-bus-ip>:4442 
+--subscribe-events tcp://<event-bus-ip>:4443 
+--port 5556
 
 #################################
-Distributor: queries the New Session Queue for new session requests, and assigns them to a Node when the capabilities match. 
+3.4) Distributor: queries the New Session Queue for new session requests, and assigns them to a Node when the capabilities match. 
 Nodes register to the Distributor the way they register to the Hub in a Hub/Node Grid.
 Default Distributor port is 5553. 
 Distributor interacts with New Session Queue, Session Map, Event Bus, and the Node(s).
 
-java -jar selenium-server-<version>.jar distributor --publish-events tcp://<event-bus-ip>:4442 --subscribe-events tcp://<event-bus-ip>:4443 --sessions http://<sessions-ip>:5556 --sessionqueue http://<new-session-queue-ip>:5559 --port 5553 --bind-bus false
+java -jar selenium-server-<version>.jar distributor 
+--publish-events tcp://<event-bus-ip>:4442 
+--subscribe-events tcp://<event-bus-ip>:4443 
+--sessions http://<sessions-ip>:5556 
+--sessionqueue http://<new-session-queue-ip>:5559 
+--port 5553 --bind-bus false
 
 #################################
-Router: redirects new session requests to the queue, and redirects running sessions requests to the Node running that session.
+3.5) Router: redirects new session requests to the queue, and redirects running sessions requests to the Node running that session.
 Default Router port is 4444. Router interacts with New Session Queue, Session Map, and Distributor.
 
-java -jar selenium-server-<version>.jar router --sessions http://<sessions-ip>:5556 --distributor http://<distributor-ip>:5553 --sessionqueue http://<new-session-queue-ip>:5559 --port 4444
+java -jar selenium-server-<version>.jar router 
+--sessions http://<sessions-ip>:5556 
+--distributor http://<distributor-ip>:5553 
+--sessionqueue http://<new-session-queue-ip>:5559 
+--port 4444
 
 #################################
-Node(s):
+3.6) Node(s):
 Default Node port is 5555.
-java -jar selenium-server-<version>.jar node --publish-events tcp://<event-bus-ip>:4442 --subscribe-events tcp://<event-bus-ip>:4443
-
+java -jar selenium-server-<version>.jar node 
+--publish-events tcp://<event-bus-ip>:4442 
+--subscribe-events tcp://<event-bus-ip>:4443
 
 #################################
 
 	public WebDriver driver;
 	
-	public WebDriver initializeBrowser(String browserName) throws MalformedURLException {
-		
+	public WebDriver initializeBrowser(String browserName) throws MalformedURLException {		
 		@SuppressWarnings("rawtypes")
-		AbstractDriverOptions options = null;
-		
-		if(browserName.equals("chrome")) {
-			
+		AbstractDriverOptions options = null;		
+		if(browserName.equals("chrome")) {			
 			options = new ChromeOptions();
 			options.setCapability("browserVersion", "100");
 			options.setCapability("platformName", "Windows");
@@ -145,21 +164,16 @@ java -jar selenium-server-<version>.jar node --publish-events tcp://<event-bus-i
 			options.setCapability("se:name", "My simple test"); 
 			// Other type of metadata can be seen in the Grid UI by clicking on the 
 			// session info or via GraphQL
-			options.setCapability("se:sampleMetadata", "Sample metadata value");
-			
+			options.setCapability("se:sampleMetadata", "Sample metadata value");			
 		} else if(browserName.equals("microsoft-edge")) {			
 			options = new EdgeOptions();
-			options.setCapability("browserName", "MicrosoftEdge");
-			
+			options.setCapability("browserName", "MicrosoftEdge");			
 		} else if(browserName.equals("firefox")) {			
 			options = new FirefoxOptions();
-			options.setCapability("browserName", "firefox");
-			
-		}
-		
+			options.setCapability("browserName", "firefox");			
+		}		
 		driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);		
-		driver.manage().window().maximize();
-		
+		driver.manage().window().maximize();		
 		return driver;		
 	}
 	
