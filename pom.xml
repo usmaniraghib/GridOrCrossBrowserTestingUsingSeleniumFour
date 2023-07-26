@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.raghib.selenium4.grid</groupId>
+  <artifactId>GridOrCrossBrowserTestingUsingSeleniumFour</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>GridOrCrossBrowserTestingUsingSeleniumFour</name>
+  <description>New way of achieving grid at selenium 4 version</description>
+  
+  <properties>
+		<maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<java.version>17</java.version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<selenium-java-version>4.9.1</selenium-java-version>
+	    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<testng-version>7.8.0</testng-version>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<project.encoding>UTF-8</project.encoding>
+		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+
+		<!-- SELENIUM [4.9.1] DEPENDENCY-->
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium-java-version}</version>
+		</dependency>
+		
+		<!-- TESTNG [7.8.0] DEPENDENCY-->
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

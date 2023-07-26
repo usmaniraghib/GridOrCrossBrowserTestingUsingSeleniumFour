@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-23T01:05:23 IST" name="Suite" finished-at="2023-07-23T01:05:39 IST" duration-ms="16098">
+    <groups>
+    </groups>
+    <test started-at="2023-07-23T01:05:23 IST" name="Test" finished-at="2023-07-23T01:05:39 IST" duration-ms="16098">
+      <class name="com.raghib.selenium.grid.TestOnFirefoxBrowser">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.raghib.selenium.grid.TestOnFirefoxBrowser@3c46e67a]" started-at="2023-07-23T01:05:31 IST" name="setup" finished-at="2023-07-23T01:05:36 IST" duration-ms="4888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testOnFirefox()[pri:0, instance:com.raghib.selenium.grid.TestOnFirefoxBrowser@3c46e67a]" started-at="2023-07-23T01:05:36 IST" name="testOnFirefox" finished-at="2023-07-23T01:05:37 IST" duration-ms="1725" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnFirefox -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.raghib.selenium.grid.TestOnFirefoxBrowser@3c46e67a]" started-at="2023-07-23T01:05:37 IST" name="tearDown" finished-at="2023-07-23T01:05:39 IST" duration-ms="1465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.raghib.selenium.grid.TestOnFirefoxBrowser -->
+      <class name="com.raghib.selenium.grid.TestOnChromeBrowser">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.raghib.selenium.grid.TestOnChromeBrowser@a1153bc]" started-at="2023-07-23T01:05:23 IST" name="setup" finished-at="2023-07-23T01:05:26 IST" duration-ms="3006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testOnChrome()[pri:0, instance:com.raghib.selenium.grid.TestOnChromeBrowser@a1153bc]" started-at="2023-07-23T01:05:26 IST" name="testOnChrome" finished-at="2023-07-23T01:05:27 IST" duration-ms="1427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnChrome -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.raghib.selenium.grid.TestOnChromeBrowser@a1153bc]" started-at="2023-07-23T01:05:27 IST" name="tearDown" finished-at="2023-07-23T01:05:28 IST" duration-ms="259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.raghib.selenium.grid.TestOnChromeBrowser -->
+      <class name="com.raghib.selenium.grid.TestOnEdgeBrowser">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.raghib.selenium.grid.TestOnEdgeBrowser@6c6cb480]" started-at="2023-07-23T01:05:28 IST" name="setup" finished-at="2023-07-23T01:05:29 IST" duration-ms="1536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testOnEdge()[pri:0, instance:com.raghib.selenium.grid.TestOnEdgeBrowser@6c6cb480]" started-at="2023-07-23T01:05:29 IST" name="testOnEdge" finished-at="2023-07-23T01:05:30 IST" duration-ms="1410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnEdge -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.raghib.selenium.grid.TestOnEdgeBrowser@6c6cb480]" started-at="2023-07-23T01:05:30 IST" name="tearDown" finished-at="2023-07-23T01:05:31 IST" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.raghib.selenium.grid.TestOnEdgeBrowser -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
