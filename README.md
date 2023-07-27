@@ -1,6 +1,6 @@
 # GridOrCrossBrowserTestingUsingSeleniumFour
 
-NOTE - Run the command thru command prompt first, and then "Maven Clean" and "Maven Install".
+NOTE - Run the command thru command prompt first, and then "Maven Clean" and "Maven Install" to run this maven project.
  
 #GRID
 
