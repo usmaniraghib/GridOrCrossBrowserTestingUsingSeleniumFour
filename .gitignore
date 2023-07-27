@@ -19,3 +19,4 @@ buildNumber.properties
 .classpath
 # TestNG Report Folder
 test-output
+/target
