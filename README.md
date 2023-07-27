@@ -1,5 +1,7 @@
 # GridOrCrossBrowserTestingUsingSeleniumFour
 
+NOTE - Run the command thru command prompt first, and then "Maven Clean" and "Maven Install".
+ 
 #GRID
 
 Check Grid Status before starting it :-
