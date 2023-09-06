@@ -30,5 +30,4 @@ public class TestOnChromeBrowser extends BaseClassToInitializeDriverUsingAbstrac
 		System.out.println("Page Title : "+driver.getTitle());
 		System.out.println("Chrome Browser Test End");
 	}
-
 }

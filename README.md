@@ -9,7 +9,9 @@ NON UI Version : http://localhost:4444/status
 UI Version : http://localhost:4444
 
 #Types of Grid :-
-*******************************************Standalone************************************************************
+
+*****Standalone*****
+
 1) STANDALONE MODE -> If we want to run "HUB" and "NODE" in same machine, we can use this mode.
 
 *) To run grid in standalone mode follow the below steps;
@@ -39,7 +41,8 @@ STEP-3
 
 Run your testng.xml file
 
-*******************************************Hub and Node************************************************************
+******Hub and Node*****
+
 2) HUB & NODE MODE -> 
 
 *) When Node and Hub running separately on same machines
@@ -93,7 +96,8 @@ java -jar selenium-server-<version>.jar node
 --publish-events tcp://<hub-ip>:8886 
 --subscribe-events tcp://<hub-ip>:8887
 
-*******************************************Distributed************************************************************
+*****Distributed*****
+
 3) DISTRIBUTED
 When using a Distributed Grid, each component is started separately, and ideally on different machines.
 

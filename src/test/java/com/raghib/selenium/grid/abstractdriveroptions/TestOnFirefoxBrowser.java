@@ -30,5 +30,4 @@ public class TestOnFirefoxBrowser extends BaseClassToInitializeDriverUsingAbstra
 		System.out.println("Page Title : "+driver.getTitle());
 		System.out.println("Firefox Browser Test End");
 	}
-
 }

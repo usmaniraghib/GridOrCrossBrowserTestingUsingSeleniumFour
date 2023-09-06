@@ -30,5 +30,4 @@ public class TestOnEdgeBrowser extends BaseClassToInitializeDriverUsingAbstractD
 		System.out.println("Page Title : "+driver.getTitle());
 		System.out.println("MicrosoftEdge Browser Test End");
 	}
-
 }
